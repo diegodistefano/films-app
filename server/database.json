@@ -1,0 +1,46 @@
+{
+  "films": [
+    {
+      "id": "1",
+      "title": "El Señor de los Anillos",
+      "year": 2001,
+      "director": "Peter Jackson"
+    },
+    {
+      "id": "3",
+      "title": "Star Wars",
+      "year": 1977,
+      "director": "George Lucas"
+    },
+    {
+      "id": "957c",
+      "year": 2001,
+      "title": "Harry Potter",
+      "director": "Chris Columbus"
+    },
+    {
+      "id": "957d",
+      "title": "Harry Potter 2",
+      "year": 2002,
+      "director": "Chris Columbus"
+    },
+    {
+      "id": "957e",
+      "title": "Harry Potter 3",
+      "year": 2003,
+      "director": "Chris Columbus"
+    },
+    {
+      "title": "one piece",
+      "year": "20200",
+      "director": "eichiro oda",
+      "id": "a0be"
+    },
+    {
+      "title": "EL hobbitt",
+      "year": "20100",
+      "director": "Steven",
+      "id": "3e86"
+    }
+  ]
+}
