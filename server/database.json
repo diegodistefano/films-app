@@ -7,10 +7,10 @@
       "director": "Peter Jackson"
     },
     {
-      "id": "3",
       "title": "Star Wars",
-      "year": 1977,
-      "director": "George Lucas"
+      "year": "1977",
+      "director": "George Lucas",
+      "id": "3"
     },
     {
       "id": "957c",
@@ -31,9 +31,9 @@
       "director": "Chris Columbus"
     },
     {
-      "title": "one piece",
-      "year": "20200",
-      "director": "eichiro oda",
+      "title": "One Piece",
+      "year": "2002",
+      "director": "Eichiro Oda",
       "id": "a0be"
     }
   ]

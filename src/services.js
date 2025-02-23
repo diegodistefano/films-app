@@ -33,6 +33,44 @@ function printFilms(data) {
     });
 }
 
+async function printOneFilm(data) {
+    const search = document.getElementById('film-search').value;
+
+    try {
+        const response = await fetch(URL);
+        const data = await response.json();
+
+        // document.getElementById("form-busqueda").reset();
+
+        const filteredFilms = data.filter(movie => movie.title == search || movie.year == search || movie.director == search);
+
+    table.innerHTML = "";
+
+        if (filteredFilms.length === 0){
+            console.log("No se encontraron películas con ese año.");
+            return;
+        }
+
+        filteredFilms.forEach(movie => {
+            const tr = document.createElement('tr');
+            tr.id = `row-${String(movie.id)}`;
+
+            tr.innerHTML = `
+                <td>${movie.title}</td>
+                <td>${movie.year}</td>
+                <td>${movie.director}</td>
+                <td><button class="edit-btn" onclick="updateFilm('${String(movie.id)}', '${movie.title}', '${movie.year}', '${movie.director}')">Editar</button></td>
+                <td><button class="delete-btn" onclick="deleteFilm('${String(movie.id)}')">Eliminar</button></td>
+            `;
+
+            table.appendChild(tr);
+        });
+    }
+    catch (error) {
+        console.error("Error al buscar la película:", error);
+    }
+}
+
 // CREATE: method POST
 async function createFilms() {
     const title = document.getElementById('film-title').value;
@@ -70,6 +108,7 @@ function addFilmToTable(film) {
         <td><button class="delete-btn" onclick="deleteFilm(${String(film.id)})">Eliminar</button></td>
         `;
     table.appendChild(tr);
+    getAllFilms();
 }
 
 // DELETE: method DELETE

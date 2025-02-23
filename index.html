@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
     <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <table id= "film-table" >
-            <thead>
-                <tr>
-                    <th>TÍTULO</th>
-                    <th>AÑO</th>
-                    <th>DIRECTOR</th>
-                </tr>
-            </thead>
-        </table>
+  </head>
+  <body>
+    <div class="container-create">
+      <form method="post" id="formulario">
+        <label for="titulo"
+          >Titulo:<input type="text" id="film-title" name=""
+        /></label>
+        <label for="año"
+          >Año:<input type="text" id="film-year" name=""
+        /></label>
+        <label for="director"
+          >Director:<input type="text" id="film-director" name=""
+        /></label>
+      </form>
+      <button class="add-btn" onclick="createFilms()">Agregar pelicula</button>
     </div>
     <div class="container-create">
-        <form method="post" id="formulario">
-            <label for="titulo">Titulo:<input type="text" id="film-title" name="" /></label>
-            <label for="año">Año:<input type="text" id="film-year" name="" /></label>
-            <label for="director">Director:<input type="text" id="film-director" name="" /></label>
+        <form id="form-busqueda">
+            <input type="text" id="film-search" placeholder="Buscar por año" oninput="printOneFilm()">
         </form>
+      <!-- <button class="add-btn" onclick="printOneFilm()">Buscar pelicula</button> -->
+      <button class="add-btn" onclick="getAllFilms()">Recargar listado</button>
     </div>
 
+    <div class="container">
+      <table>
+        <thead>
+          <th>TÍTULO</th>
+          <th>AÑO</th>
+          <th>DIRECTOR</th>
+          <th></th>
+          <th></th>
+        </thead>
+        <tbody id="film-table">
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <button class = "add-btn" onclick = "createFilms()">Agregar pelicula</button>
-    <button class = "add-btn"  onclick = "">Buscar Pelicula</button>
-
-
-    <script src = "./src/services.js"></script>
-</body>
+    <script src="./src/services.js"></script>
+  </body>
 </html>
